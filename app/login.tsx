@@ -84,20 +84,20 @@ export default function Login() {
   };
 
   return(
-  <><View className="bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500 rounded-full p-2 items-center justify-center">
-      <View className="bg-lime-100 rounded-full p-2">
-        <Image source={require("../assets/images/book.png")} style={{ width: 30, height: 30 }} />
+  <><View className="flex-1 justify-center items-center bg-white px-6">
+      <View className="bg-lime-200 p-4 rounded-full mb-4">
+        <Text className="text-3xl">📚</Text>
       </View>
-    </View>
-    <Text className="text-2xl font-bold font-serif text-black p-8 mb-2">Welcome to CoachFinder</Text>
-    <Text className="w-full text-gray-700 mb-4 text-center">Enter your mobile number to get started</Text>
-    <View className="flex-1 justify-center item-center bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500">
-      <View className="bg-white rounded-2xl shadow-lg p-6 w-80 items-center">
-        <View className="mb-6">
-        </View>
-            <Text className="w-full text-gray-800 mb-2 text-left">Mobile Number</Text>
+    
+    <Text className="text-2xl font-bold text-black mb-4 text-center">Welcome to CoachFinder</Text>
+    <Text className="text-gray-600 text-center mb-7">Enter your mobile number to get started</Text>
+
+    <View className="bg-white rounded-2xl shadow p-6 w-full items-center border border-gray-200">
+        {/* <View className="mb-6">
+        </View> */}
+            <Text className="text-gray-800 mb-3 text-left">Mobile Number</Text>
             <TextInput 
-               className="border border-gray-300 rounded-lg px-4 py-3 mb-2 w-full text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+               className="border border-gray-300 rounded-lg px-4 py-3 mb-4 w-full text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                keyboardType="number-pad"
                maxLength={10}
                value={number}
@@ -118,8 +118,9 @@ export default function Login() {
                  >
                   <Text className="text-white text-lg font-medium">Send OTP</Text>
                  </Pressable>
-                 <Text className="w-full mb-2 py-2 text-gray-700 items-center">By continuing, you agree to our Terms of Service & Privacy Policy</Text>
-      </View>
+                 <View className="mb-6"></View>
+                 <Text className="w-full mb-1 py-2 text-gray-500 items-center">By continuing, you agree to our Terms of Service & Privacy Policy</Text>
+    </View>
     </View>
     </>
   );
