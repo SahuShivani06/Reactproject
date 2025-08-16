@@ -156,8 +156,7 @@ export default function OTP() {
 
       <Text className="text-2xl font-bold text-gray-800 mb-2">Verify OTP</Text>
       <Text className="text-gray-600 text-center mb-6">
-        Enter the 6-digit code sent to{" "}
-        <Text className="font-semibold text-blue-600">+91 98876****77</Text>
+        Enter the 6-digit code sent to your mobile
       </Text>
 
       <View className="bg-white rounded-2xl shadow p-6 w-full items-center border border-gray-200">

@@ -3,6 +3,6 @@ import "./globals.css";
 
 export default function RootLayout() {
   return (
-    <Stack initialRouteName="login" />
+    <Stack initialRouteName="login"/>
   );
 }

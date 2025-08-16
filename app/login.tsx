@@ -89,13 +89,13 @@ export default function Login() {
         <Image source={require("../assets/images/book.png")} style={{ width: 30, height: 30 }} />
       </View>
     </View>
-    <Text className="text-2xl font-bold font-serif text-black mb-4">Welcome to CoachFinder</Text>
+    <Text className="text-2xl font-bold font-serif text-black p-8 mb-2">Welcome to CoachFinder</Text>
     <Text className="w-full text-gray-700 mb-4 text-center">Enter your mobile number to get started</Text>
     <View className="flex-1 justify-center item-center bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500">
       <View className="bg-white rounded-2xl shadow-lg p-6 w-80 items-center">
         <View className="mb-6">
         </View>
-            <Text className="w-full text-gray-100 mb-4 text-left">Mobile Number</Text>
+            <Text className="w-full text-gray-800 mb-2 text-left">Mobile Number</Text>
             <TextInput 
                className="border border-gray-300 rounded-lg px-4 py-3 mb-2 w-full text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                keyboardType="number-pad"
