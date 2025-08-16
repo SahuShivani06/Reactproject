@@ -85,19 +85,19 @@ export default function Login() {
 
   return(
   <><View className="flex-1 justify-center items-center bg-white px-6">
-      <View className="bg-lime-200 p-4 rounded-full mb-4">
+      <View className="bg-green-200 p-4 rounded-full mb-4">
         <Text className="text-3xl">📚</Text>
       </View>
     
     <Text className="text-2xl font-bold text-black mb-4 text-center">Welcome to CoachFinder</Text>
-    <Text className="text-gray-600 text-center mb-7">Enter your mobile number to get started</Text>
+    <Text className="text-gray-600 text-center mb-8">Enter your mobile number to get started</Text>
 
     <View className="bg-white rounded-2xl shadow p-6 w-full items-center border border-gray-200">
         {/* <View className="mb-6">
         </View> */}
             <Text className="text-gray-800 mb-3 text-left">Mobile Number</Text>
             <TextInput 
-               className="border border-gray-300 rounded-lg px-4 py-3 mb-4 w-full text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+               className="border border-gray-300 rounded-lg px-4 py-3 mb-4 w-full text-lg focus:border-gray-300 focus:ring-2 focus:ring-blue-200"
                keyboardType="number-pad"
                maxLength={10}
                value={number}
@@ -113,7 +113,7 @@ export default function Login() {
                 <Text className="text-red-500 text-sm mb-4 text-center w-full">{error}</Text>
                ) : null}
                <Pressable
-                 className="bg-blue-500 rounded-lg px-4 py-3 w-full items-center active:bg-lime-100"
+                 className="bg-green-300 rounded-lg px-4 py-3 w-full items-center active:bg-lime-100"
                  onPress={handleSubmit}
                  >
                   <Text className="text-white text-lg font-medium">Send OTP</Text>
