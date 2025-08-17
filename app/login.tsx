@@ -1,7 +1,7 @@
 // import { useRouter } from "expo-router";
 // import { useState } from "react";
 // import { Image, Pressable, Text, TextInput, View } from "react-native";
- 
+
 // export default function Login() {
 //   const [number, setNumber] = useState("");
 //   const [error, setError] = useState("");
@@ -67,7 +67,7 @@ import { Pressable, Text, TextInput, View } from "react-native";
 
 export default function Login() {
   const [number, setNumber] = useState("");
-  const [error, setError ] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -83,11 +83,14 @@ export default function Login() {
     setError("");
     setLoading(true);
     try {
-      const response = await fetch("http://65.0.135.170/user_auth/users/send_otp/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone_number: number })
-      });
+      const response = await fetch(
+        "http://65.0.135.170/user_auth/users/send_otp/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone_number: number }),
+        }
+      );
       if (response.ok) {
         router.push({ pathname: "/otp", params: { phone: number } });
       } else {
@@ -100,57 +103,75 @@ export default function Login() {
     setLoading(false);
   };
 
-  return(
-  <><View className="flex-1 justify-center items-center bg-white px-4">
-      <View className="bg-lime-200 p-4 rounded-full mb-4">
-        <Text className="text-3xl">📚</Text>
-      </View>
-    
-    <Text className="text-2xl font-bold text-black mb-4 text-center">Welcome to CoachFinder</Text>
-    <Text className="text-gray-600 text-center mb-7">Enter your mobile number to get started</Text>
+  return (
+    <>
+      <View className="flex-1 justify-center items-center bg-white px-4">
+        <View className="bg-lime-200 p-4 rounded-full mb-4">
+          <Text className="text-3xl">📚</Text>
+        </View>
 
-    <View className="bg-white rounded-2xl shadow p-6 w-full border border-gray-200">
-        {/* <View className="mb-6">
+        <Text className="text-2xl font-bold text-black mb-4 text-center">
+          Welcome to CoachFinder
+        </Text>
+        <Text className="text-gray-600 text-center mb-8">
+          Enter your mobile number to get started
+        </Text>
+
+        <View className="bg-white rounded-2xl shadow p-6 w-full border border-gray-200">
+          {/* <View className="mb-6">
         </View> */}
-            <Text className="text-gray-800 font-semibold mb-3 text-left">Mobile Number</Text>
-            <View className="flex-row items-center mb-4 border border-gray-300 rounded-lg bg-white">
-              <View className="px-4 py-3 justify-center items-center">
-                <Text className="text-base text-gray-700 font-semibold">+91</Text>
-              </View>
-              <View className="h-8 w-px bg-gray-300 mx-1" />
-              <TextInput 
-                className="flex-1 px-4 py-3 text-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                keyboardType="number-pad"
-                maxLength={10}
-                value={number}
-                onChangeText={text => {
-                  if (/^\d*$/.test(text)) {
-                    setNumber(text);
-                  }
-                }}
-                placeholder="Mobile Number"
-                placeholderTextColor="#999"
-              />
+          <Text className="text-gray-800 font-semibold mb-3 text-left">
+            Mobile Number
+          </Text>
+          <View className="flex-row items-center mb-4 border border-gray-300 rounded-lg bg-white">
+            <View className="px-4 py-3 justify-center items-center">
+              <Text className="text-base text-gray-700 font-semibold">+91</Text>
             </View>
-               {error ? (
-                <Text className="text-red-500 text-sm mb-4 text-center w-full">{error}</Text>
-               ) : null}
-               <Pressable
-                 className="bg-green-400 rounded-2xl px-4 py-3 w-full items-center active:bg-green-500"
-                 onPress={handleSubmit}
-                 disabled={loading}
-                 >
-                  <Text className="text-white text-lg font-medium">{loading ? "Sending..." : "Send OTP"}</Text>
-                 </Pressable>
-                 <View className="mb-6"></View>
-                 <Text
-                   className="w-full items-center"
-                   style={{ fontSize: 10, color: '#6B7280', marginBottom: 2, paddingVertical: 4, textAlign: 'center', letterSpacing: 0.1 }}
-                 >
-                   By continuing, you agree to our Terms of Service & Privacy Policy
-                 </Text>
-    </View>
-    </View>
+            <View className="h-8 w-px bg-gray-300 mx-1" />
+            <TextInput
+              className="flex-1 px-4 py-3 text-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+              keyboardType="number-pad"
+              maxLength={10}
+              value={number}
+              onChangeText={(text) => {
+                if (/^\d*$/.test(text)) {
+                  setNumber(text);
+                }
+              }}
+              placeholder="Mobile Number"
+              placeholderTextColor="#999"
+            />
+          </View>
+          {error ? (
+            <Text className="text-red-500 text-sm mb-4 text-center w-full">
+              {error}
+            </Text>
+          ) : null}
+          <Pressable
+            className="bg-green-400 rounded-2xl px-4 py-3 w-full items-center active:bg-green-500"
+            onPress={handleSubmit}
+            disabled={loading}
+          >
+            <Text className="text-white text-lg font-medium">
+              {loading ? "Sending..." : "Send OTP"}
+            </Text>
+          </Pressable>
+          <View className="mb-6"></View>
+          <Text
+            className="w-full items-center"
+            style={{
+              fontSize: 10,
+              color: "#6B7280",
+              marginBottom: 2,
+              paddingVertical: 4,
+              textAlign: "center",
+              letterSpacing: 0.1,
+            }}
+          >
+            By continuing, you agree to our Terms of Service & Privacy Policy
+          </Text>
+        </View>
+      </View>
     </>
   );
 }
