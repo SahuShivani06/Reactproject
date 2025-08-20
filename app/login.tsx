@@ -64,6 +64,7 @@
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
+import {Ionicons} from "@expo/vector-icons";
 
 export default function Login() {
   const [number, setNumber] = useState("");
@@ -114,12 +115,38 @@ export default function Login() {
           Welcome to CoachFinder
         </Text>
         <Text className="text-gray-600 text-center mb-8">
-          Enter your mobile number to get started
+          Choose your preferred login method
         </Text>
 
         <View className="bg-white rounded-2xl shadow p-6 w-full border border-gray-200">
           {/* <View className="mb-6">
         </View> */}
+        <Pressable 
+            className="flex-row items-center bg-white rounded-2xl p-3 mb-3 w-full border border-gray-200">
+              <Ionicons name="logo-google" size={20} color="#DB4437"/>
+              <Text className="ml-3 text-base items-center text-gray-900">Continue with Google</Text>
+            </Pressable>
+
+            <Pressable 
+            className="flex-row items-center bg-white rounded-2xl p-3 mb-3 w-full border border-gray-200">
+              <Ionicons name="logo-facebook" size={20} color="#1877F2"/>
+              <Text className="ml-3 text-base text-gray-900">Continue with Facebook</Text>
+            </Pressable>
+            
+            <Pressable 
+            className="flex-row items-center bg-white rounded-2xl p-3 mb-8 w-full border border-gray-200">
+              <Ionicons name="logo-instagram" size={20} color="#C13584"/>
+              <Text className="ml-3 text-base text-gray-900">Continue with Instagram</Text>
+            </Pressable>
+
+            <View className="flex-row items-center w-full my-4 mb-8">
+              <View className="flex-1 h-px bg-gray-300"/>
+              <Text className="px-1 text-s text-gray-500">
+                OR CONTINUE WITH MOBILE 
+              </Text>
+              <View className="flex-1 h-px bg-gray-300"/>
+            </View>
+
           <Text className="text-gray-800 font-semibold mb-3 text-left">
             Mobile Number
           </Text>
